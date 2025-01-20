@@ -22,7 +22,7 @@ session_start();
 <body>
 
     <header>
-        <a href="./home.php">Battle Lords</a>
+        <a href="./heros.php">Battle Lords</a>
     </header>
 
     <main>

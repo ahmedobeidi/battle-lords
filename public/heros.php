@@ -12,7 +12,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Heros</title>
     <link rel="stylesheet" href="./assets/styles/style.css">
     <link rel="stylesheet" href="./assets/styles/showHeros.css">
     <link rel="stylesheet" href="./assets/styles/button.css">
@@ -20,7 +20,7 @@
 <body>
 
     <header>
-        <a href="./home.php">Battle Lords</a>
+        <a href="./heros.php">Battle Lords</a>
     </header>
 
     <main>
@@ -34,13 +34,12 @@
             </section>
         <?php else : ?>
             <section class="hero-grid">
-                <?php foreach ($heros as $hero): ?>
-                    <div class="hero-card">
-                        <img src="./assets/images/heros/<?= $hero->getImage(); ?>" alt="Hero 1" class="hero-image">
-                        <h2 class="hero-name"><?= $hero->getName(); ?></h2>
-                        <!-- <p class="hero-description">A fierce competitor known for their strength and agility.</p> -->
-                    </div>
-                <?php endforeach ?>
+            <?php foreach ($heros as $hero): ?>
+                <form action="../process/handleChosenHero.php" method="POST" class="hero-card" onclick="this.submit()">
+                    <input type="hidden" name="name" value="<?= htmlspecialchars($hero->getName()); ?>">
+                    <img src="./assets/images/heros/<?= $hero->getImage(); ?>" class="hero-image">
+                </form>
+            <?php endforeach; ?>
             </section>
         <?php endif ?>   
     </main>
@@ -48,4 +47,6 @@
 </body>
 </html>
 
-
+ <!-- <div onclick="this.parentNode.submit()">
+                        <h2 class="hero-name"><?= htmlspecialchars($hero->getName()); ?></h2>
+                    </div> -->

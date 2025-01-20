@@ -7,7 +7,6 @@ final class HeroRepository extends AbstractRepository
         parent::__construct(); 
     }
 
-
     public function find(string $name): ?Hero
     {
         $sql = "SELECT * FROM hero WHERE name = :name";

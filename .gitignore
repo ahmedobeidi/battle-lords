@@ -1,2 +1,7 @@
-public/assets/images/*
-./public/assets/images/*
+public/assets/images/heros
+public/assets/images/monster
+
+./public/assets/images/heros
+./public/assets/images/monster
+
+
