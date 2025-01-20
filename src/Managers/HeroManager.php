@@ -4,9 +4,9 @@ class HeroManager {
 
     public function findAll(): array{
 
-        $myHeroRepo = new HeroesRepository();
+        $heroRepo = new HeroRepository();
 
-        $heros = $myHeroRepo->findAllHeroes();
+        $heros = $heroRepo->findAll();
 
         return $heros;
     }

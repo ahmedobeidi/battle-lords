@@ -1,61 +1,20 @@
 <?php
 
-
-class Hero {
-
+final class Hero extends Character
+{
     private int $id;
-    private string $name;
-    private string $image;
-    private int $health;
-    private int $attack;
-    // private int $healthMax;
 
-    public function __construct(int $id, string $name, $image) {
-        $this->name = $name;
-        $this->image = $image;
-        $this->health = 100;
-        $this->attack = 15;
+    public function __construct(int $id, string $name, string $image, int $health = 100, int $healthMax = 100)
+    {
+        parent::__construct($name, $image, $health, $healthMax);
+        $this->id = $id;
     }
 
     /**
      * Get the value of id
      */ 
-    public function getId()
+    public function getId(): int
     {
         return $this->id;
     }
-
-    
-    /**
-     * Get the value of name
-     */ 
-    public function getName(): string 
-    {
-        return $this->name;
-    }
-
-    public function getImage(): string 
-    {
-        return $this->image;
-    }
-
-    public function getHealth(): int 
-    {
-        return $this->health;
-    }
-
-    public function getAttack(): int
-    {
-        return $this->attack;
-    }
-
-    public function attack(Monster $monster): void {
-        $monster->takeDamage($this->attack);
-    }
-
-    public function takeDamage(int $damage): void {
-        $this->health -= $damage;
-    }
-
-    
 }

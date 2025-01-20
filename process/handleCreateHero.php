@@ -10,16 +10,15 @@ if($_SERVER['REQUEST_METHOD'] !== 'POST') {
     return;
 }
 
-// $name = SecurityService::validateCreateHeroForm($_POST);
 $heroName = SecurityService::validateCreateHeroName($_POST);
 $heroImage = SecurityService::validateCreateHeroImage($_FILES);
 
-$heroRepository = new HeroesRepository();
+$heroRepository = new HeroRepository();
 
-$hero = $heroRepository->findByName($heroName);
+$hero = $heroRepository->find($heroName);
 
 if (!$hero){
-    $hero = new Hero(0, $heroName, $heroImage);
+    $hero = new Hero(0, $heroName, $heroImage, 100, 100);
     $heroRepository->create($hero);
     header("Location: ../public/home.php?m=success");
     exit();
