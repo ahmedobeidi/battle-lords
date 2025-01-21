@@ -1,6 +1,6 @@
-<?php
+<?php 
 
-abstract class Monster extends Character
+final class Dragon extends Monster
 {
     public function __construct(string $name, string $image, int $health, int $healthMax)
     {

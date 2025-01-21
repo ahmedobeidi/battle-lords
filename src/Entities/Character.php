@@ -57,7 +57,7 @@ abstract class Character
     }
 
 
-    public function hit(Character $target)
+    public function attack(Character $target)
     {
 
         if($target->getHealth() - 15 <= 0){

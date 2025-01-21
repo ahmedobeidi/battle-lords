@@ -2,8 +2,6 @@
 
 include_once '../utils/autoloader.php';
 
-session_start();
-
 if($_SERVER['REQUEST_METHOD'] !== 'POST') {
     $_SESSION['error'] = "Auth";
     header("Location: ../public/createHero.php?error=Auth");
@@ -18,7 +16,7 @@ $heroRepository = new HeroRepository();
 $hero = $heroRepository->find($heroName);
 
 if (!$hero){
-    $hero = new Hero(0, $heroName, $heroImage, 100, 100);
+    $hero = new Hero(0, $heroName, $heroImage);
     $heroRepository->create($hero);
     header("Location: ../public/heros.php?m=success");
     exit();

@@ -54,7 +54,7 @@ class SecurityService {
             exit;
         }
 
-        $uploadDir = '../public/assets/images/heros/';
+        $uploadDir = '../public/assets/images/heros_unique_id/';
         $uploded = false;
 
         if (!is_dir($uploadDir)) {

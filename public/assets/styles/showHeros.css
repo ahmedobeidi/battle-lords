@@ -3,12 +3,21 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 100vh;
 }
 
 .hero-create-button {
     margin-top: 30px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    gap: 10px;
+    height: 10vh;
+}
+
+.button {
+    width: 90px;
 }
 
 .not-found {
@@ -16,28 +25,32 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+    color: #fff;
+}
+
+.heading {
+    font-size: 2rem;
 }
 
 .hero-grid {
     margin-top: 50px;
-    width: 100vw;
-    height: 75vh;
+    width: 90vw;
+    height: 70vh;
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-between;
+    align-items: end;
     flex-wrap: wrap;
-    gap: 50px;
 }
 
  .hero-card {
     padding: 10px;
-    width: 325px;
-    height: 325px;
+    width: 400;
+    height: 400px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: end;
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 10px;
@@ -52,8 +65,8 @@ main {
 }
 
 .hero-image {
-    width: 325px;
-    height: 325px;
+    width: 400;
+    height: 400px;
 }
 
 .hero-name {

@@ -2,7 +2,7 @@
 
 require_once '../utils/autoloader.php';
 
-session_start();
+// session_start();
 
 // if (!isset($_SESSION['hero'])) {
 //     $_SESSION['hero'] = new Hero();
