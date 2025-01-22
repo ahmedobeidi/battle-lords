@@ -22,7 +22,7 @@ $randomNumber = rand(1, 15);
 
 // 1/15 chance to fight a dragon
 if ($randomNumber == 1) {
-    $monster = new Dragon("Dragon", "dragon.gif", 200, 200);
+    $monster = new Dragon("Dragon", "dragon.gif", 100, 100);
 } 
 // 5/15 chance to fight an ogre
 elseif ($randomNumber <= 6) {
@@ -30,7 +30,7 @@ elseif ($randomNumber <= 6) {
 } 
 // 9/15 chance to fight a goblin
 else {
-    $monster = new Goblin("Goblin", "goblin.gif", 60, 60);
+    $monster = new Goblin("Goblin", "goblin.gif", 100, 100);
 }
 
 session_start();

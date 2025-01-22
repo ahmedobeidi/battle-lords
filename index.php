@@ -1,4 +1,4 @@
 <?php
 
-header("Location: ./public/heros.php");
+header("Location: ./public/showHeros.php");
 exit;

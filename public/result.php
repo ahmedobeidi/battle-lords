@@ -30,7 +30,7 @@
             <?php session_unset(); ?>
         </section>
         <section class="replay">
-            <a href="./heros.php" class="button">Replay</a>
+            <a href="./showHeros.php" class="button">Replay</a>
         </section>
     </main>
 
