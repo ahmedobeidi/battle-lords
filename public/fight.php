@@ -55,6 +55,7 @@ if ($hero->getHealth() <= 0 || $monster->getHealth() <= 0) {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -63,6 +64,7 @@ if ($hero->getHealth() <= 0 || $monster->getHealth() <= 0) {
     <link rel="stylesheet" href="./assets/styles/button.css">
     <link rel="stylesheet" href="./assets/styles/fight.css">
 </head>
+
 <body>
     <header>
         <a>Battle Lords</a>
@@ -78,7 +80,9 @@ if ($hero->getHealth() <= 0 || $monster->getHealth() <= 0) {
                         <?= htmlspecialchars($hero->getHealth() . "%"); ?>
                     </div>
                 </div>
-                <img src="./assets/images/heros_unique_id/<?= htmlspecialchars($hero->getImage()); ?>" alt="Hero">
+                <div>
+                    <img src="./assets/images/heros_unique_id/<?= htmlspecialchars($hero->getImage()); ?>" alt="Hero">
+                </div>
             </div>
 
             <?php if (!isset($_SESSION['gameOver'])): ?>
@@ -104,4 +108,5 @@ if ($hero->getHealth() <= 0 || $monster->getHealth() <= 0) {
         </section>
     </main>
 </body>
+
 </html>

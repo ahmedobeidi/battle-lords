@@ -1,5 +1,6 @@
 body {
-    background-image: url('../images/game/background2.gif');
+    background-image: url('../images/game/backgroudn9.gif');
+    background-position: center;
 }
 
 main {
@@ -20,10 +21,10 @@ div {
     display: flex;
     justify-content: end;
     flex-direction: column;
-    align-items: center;
+    align-items: end;
     gap: 50px;
     width: 400px;
-    margin-bottom: 80px;
+    margin-bottom: 30px;
     /* background-color: red; */
 }
 
