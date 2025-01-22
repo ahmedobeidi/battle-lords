@@ -1,114 +1,118 @@
-body {
-    background-image: url('../images/game/backgroudn9.gif');
-    background-position: center;
-}
 
-main {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: end;
-    height: 100vh;
-}
-
-section {
-    width: 80vw;
-    display: flex;
-    justify-content: space-between;
-}
-
-div {
-    display: flex;
-    justify-content: end;
-    flex-direction: column;
-    align-items: end;
-    gap: 50px;
-    width: 400px;
-    margin-bottom: 30px;
-    /* background-color: red; */
-}
-
-p {
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
-img {
-    width: 100%;
-}
-
-.button {
-    padding: 10px 30px;
-    width: fit-content;
-    height: fit-content;
-    font-size: 1.5rem;
-    background-color: rgba(0, 0, 0, 0.7);
-}
-
-.button:hover {
-    background-color: #369381;
-}
-
-form {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-}
-
-input {
-    padding: 10px 20px;
-    font-size: 1.5rem;
-    color: #fff;
-    border-radius: 50px;
-    border: 2px solid #369381;
-    background-color: #369381;
-}
-
-input:hover {
-    background-color: rgba(0, 0, 0, 0.7);
-    cursor: pointer;
-}
-
-.progress-container {
-    width: 100%;
-    height: 30px;
-    background-color: white; /* White background for the empty part */
-    border-radius: 5px;
-    margin-bottom: 10px;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2); /* Optional: Shadow for a nice look */
-    display: block;
-}
-
-.progress-bar {
-    height: 100%;
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-weight: bold;
-    transition: width 0.3s ease-in-out; /* Smooth transition for health change */
-}
-
-.hero-bar {
-    background-color: green; /* Hero's colored progress bar */
-}
-
-.monster-bar {
-    background-color: red; /* Monster's colored progress bar */
-}
-
-.button {
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    border: none;
-    color: white;
-    cursor: pointer;
-    font-size: 16px;
-    border-radius: 5px;
-    text-align: center;
-}
-
-.button:hover {
-    background-color: #45a049;
+@media (min-width: 1280px) { 
+    body {
+        background-image: url('../images/game/backgroudn9.gif');
+        background-position: center;
+    }
+    
+    main {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: end;
+        height: 100vh;
+    }
+    
+    section {
+        width: 80vw;
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    div {
+        display: flex;
+        justify-content: end;
+        flex-direction: column;
+        align-items: end;
+        gap: 50px;
+        width: 400px;
+        margin-bottom: 30px;
+        /* background-color: red; */
+    }
+    
+    p {
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+    
+    img {
+        width: 100%;
+    }
+    
+    .button {
+        padding: 10px 30px;
+        width: fit-content;
+        height: fit-content;
+        font-size: 1.5rem;
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+    
+    .button:hover {
+        background-color: #369381;
+    }
+    
+    form {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+    }
+    
+    input {
+        padding: 10px 20px;
+        font-size: 1.5rem;
+        color: #fff;
+        border-radius: 50px;
+        border: 2px solid #369381;
+        background-color: #369381;
+    }
+    
+    input:hover {
+        background-color: rgba(0, 0, 0, 0.7);
+        cursor: pointer;
+    }
+    
+    .progress-container {
+        width: 100%;
+        height: 30px;
+        background-color: white; /* White background for the empty part */
+        border-radius: 5px;
+        margin-bottom: 10px;
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2); /* Optional: Shadow for a nice look */
+        display: block;
+    }
+    
+    .progress-bar {
+        height: 100%;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-weight: bold;
+        transition: width 0.3s ease-in-out; /* Smooth transition for health change */
+    }
+    
+    .hero-bar {
+        background-color: green; /* Hero's colored progress bar */
+    }
+    
+    .monster-bar {
+        background-color: red; /* Monster's colored progress bar */
+    }
+    
+    .button {
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        cursor: pointer;
+        font-size: 16px;
+        border-radius: 5px;
+        text-align: center;
+    }
+    
+    .button:hover {
+        background-color: #45a049;
+    }
+    
 }

@@ -21,8 +21,10 @@
         <a href="./showHeros.php">Battle Lords</a>
     </header>
 
-    <main> 
-        <h1 class="heading">Choose Your Hero</h1>
+    <main>
+        <div class="heading">
+            <h1>Choose Your Hero</h1>
+        </div> 
         <section class="hero-grid">
             <?php foreach ($heros as $hero): ?>
                 <form action="../process/handleChosenHero.php" method="POST" class="hero-card" onclick="this.submit()">

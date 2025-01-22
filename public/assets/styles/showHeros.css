@@ -1,50 +1,54 @@
-main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
 
-.heading {
-    padding-top: 150px;
-    font-size: 3rem;
-}
+@media (min-width: 1280px) {
+    main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    
+    .heading {
+        padding-top: 150px;
+        font-size: 3rem;
+    }
+    
+    .hero-grid {
+        padding-top: 100px;
+        width: 90vw;
+        height: 50%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: end;
+        flex-wrap: wrap;
+    }
+    
+     .hero-card {
+        width: 400;
+        height: 400px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: end;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 10px;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+    
+    .hero-card:hover {
+        transform: scale(1.05);
+        cursor: pointer;
+    }
+    
+    .hero-image {
+        width: 400;
+        height: 400px;
+    }
+    
+    .hero-name {
+        font-size: 1.5rem;
+    }
 
-.hero-grid {
-    padding-top: 100px;
-    width: 90vw;
-    height: 50%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: end;
-    flex-wrap: wrap;
-}
-
- .hero-card {
-    width: 400;
-    height: 400px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: end;
-    background-repeat: no-repeat;
-    background-size: cover;
-    border-radius: 10px;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.hero-card:hover {
-    transform: scale(1.05);
-    cursor: pointer;
-}
-
-.hero-image {
-    width: 400;
-    height: 400px;
-}
-
-.hero-name {
-    font-size: 1.5rem;
-}
+ }
