@@ -81,7 +81,7 @@ if ($hero->getHealth() <= 0 || $monster->getHealth() <= 0) {
                     </div>
                 </div>
                 <div>
-                    <img src="./assets/images/heros_unique_id/<?= htmlspecialchars($hero->getImage()); ?>" alt="Hero">
+                    <img src="./assets/images/heros/<?= htmlspecialchars($hero->getImage()); ?>" alt="Hero">
                 </div>
             </div>
 
