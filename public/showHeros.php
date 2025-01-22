@@ -27,7 +27,7 @@
             <?php foreach ($heros as $hero): ?>
                 <form action="../process/handleChosenHero.php" method="POST" class="hero-card" onclick="this.submit()">
                     <input type="hidden" name="name" value="<?= htmlspecialchars($hero->getName()); ?>">
-                    <img src="./assets/images/heros_unique_id/<?= $hero->getImage(); ?>" class="hero-image">
+                    <img src="./assets/images/heros/<?= $hero->getImage(); ?>" class="hero-image">
                 </form>
             <?php endforeach; ?>
         </section>
