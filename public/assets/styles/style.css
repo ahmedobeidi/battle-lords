@@ -1,39 +1,42 @@
-* {
-    margin: 0;
-    padding: 0;
-}
 
-body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-image: url('../images/game/background.gif');
-    background-repeat: no-repeat;
-    background-size: cover;
-    color: #fff;
-    height: 100%;
-}
+@media (min-width: 1280px) {
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    body {
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-image: url('../images/game/background.gif');
+        background-repeat: no-repeat;
+        background-size: cover;
+        color: #fff;
+        height: 100%;
+    }
+    
+    header {
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        justify-content: center;
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    }
+    
+    header a {
+        margin: 0;
+        font-size: 2rem;
+        font-weight: bolder;
+        text-transform: uppercase;
+        color: #369381;
+        letter-spacing: 2px;
+        text-decoration: none;
+    } 
 
-header {
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    justify-content: center;
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-}
-
-header a {
-    margin: 0;
-    font-size: 2rem;
-    font-weight: bolder;
-    text-transform: uppercase;
-    color: #369381;
-    letter-spacing: 2px;
-    text-decoration: none;
-} 
-
+ }
