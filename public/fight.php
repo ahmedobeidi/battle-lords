@@ -4,6 +4,14 @@ require_once '../utils/autoloader.php';
 
 session_start();
 
+// Check if the "Play Again" button is clicked
+if (isset($_POST['playAgain'])) {
+    // Destroy the session to clear all data
+    session_destroy(); // This will remove all session variables
+    header('Location: ./heros.php'); // Redirect to start page or hero selection page
+    exit;
+}
+
 // Check if hero and monster exist in session
 if (!isset($_SESSION['hero']) || !isset($_SESSION['monster'])) {
     header('Location: ./heros.php');
@@ -26,7 +34,7 @@ if (!isset($_SESSION['turn'])) {
 }
 
 // Process the attack
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && !isset($_POST['playAgain'])) {
     if ($_SESSION['turn'] === 'hero') {
         // Hero attacks the monster
         $hero->attack($monster);
@@ -63,7 +71,13 @@ if ($hero->getHealth() <= 0 || $monster->getHealth() <= 0) {
     <main>
         <section>
             <div>
-                <p><?= htmlspecialchars($hero->getHealth() . "%"); ?></p>
+                <!-- Hero Progress Bar with Health Text -->
+                <div class="progress-container">
+                    <!-- Ensure health is at least 1% for visibility -->
+                    <div class="progress-bar hero-bar" style="width: <?= max($hero->getHealth(), 1); ?>%">
+                        <?= htmlspecialchars($hero->getHealth() . "%"); ?>
+                    </div>
+                </div>
                 <img src="./assets/images/heros_unique_id/<?= htmlspecialchars($hero->getImage()); ?>" alt="Hero">
             </div>
 
@@ -72,16 +86,19 @@ if ($hero->getHealth() <= 0 || $monster->getHealth() <= 0) {
                     <input type="submit" value="Attack" class="button">
                 </form>
             <?php else: ?>
-                <div class="gameOver">
-                    <p>Game Over!</p>
-                    <form action="../process/handlePlayAgain.php" method="post">
-                        <input type="submit" value="Play Again">
-                    </form>
-                </div>
+                <form action="../process/handlePlayAgain.php" method="POST">
+                    <input type="submit" name="playAgain" value="Play Again" class="button">
+                </form>
             <?php endif; ?>
 
             <div>
-                <p id="monsterLabel"><?= htmlspecialchars($monster->getHealth() . "%"); ?></p>
+                <!-- Monster Progress Bar with Health Text -->
+                <div class="progress-container">
+                    <!-- Ensure health is at least 1% for visibility -->
+                    <div class="progress-bar monster-bar" style="width: <?= max($monster->getHealth(), 1); ?>%">
+                        <?= htmlspecialchars($monster->getHealth() . "%"); ?>
+                    </div>
+                </div>
                 <img src="./assets/images/monster/<?= htmlspecialchars($monster->getImage()); ?>" alt="Monster">
             </div>
         </section>
