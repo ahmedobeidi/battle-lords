@@ -59,11 +59,12 @@ abstract class Character
 
     public function attack(Character $target)
     {
+        $randomNumber = rand(15, 30);
 
-        if($target->getHealth() - 15 <= 0){
+        if($target->getHealth() - $randomNumber <= 0){
             $target->setHealth(0);
         } else {
-            $target->setHealth($target->getHealth() - 15);
+            $target->setHealth($target->getHealth() - $randomNumber);
         }
         
     }

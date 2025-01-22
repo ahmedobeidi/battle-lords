@@ -4,19 +4,11 @@ require_once '../utils/autoloader.php';
 
 session_start();
 
-// Need to check auth to enter this page //
-
-
+// Check if hero and monster exist in session
 if (!isset($_SESSION['hero']) || !isset($_SESSION['monster'])) {
     header('Location: ./heros.php');
     exit;
 }
-
-if (!isset($_SESSION['turn'])) {
-    $_SESSION['turn'] = 'hero'; // Start with the hero's turn
-}
-
-
 
 /**
  * @var Hero $hero
@@ -28,8 +20,28 @@ $hero = $_SESSION['hero'];
  */
 $monster = $_SESSION['monster'];
 
+// Check if it's the first turn
+if (!isset($_SESSION['turn'])) {
+    $_SESSION['turn'] = 'hero'; // Start with the hero's turn
+}
 
+// Process the attack
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if ($_SESSION['turn'] === 'hero') {
+        // Hero attacks the monster
+        $hero->attack($monster);
+        $_SESSION['turn'] = 'monster'; // Switch to monster's turn
+    } else {
+        // Monster attacks the hero
+        $monster->attack($hero);
+        $_SESSION['turn'] = 'hero'; // Switch back to hero's turn
+    }
+}
 
+// Check for game over condition
+if ($hero->getHealth() <= 0 || $monster->getHealth() <= 0) {
+    $_SESSION['gameOver'] = true;
+}
 
 ?>
 
@@ -51,51 +63,28 @@ $monster = $_SESSION['monster'];
     <main>
         <section>
             <div>
-                <p id="heroLabel"><?=  htmlspecialchars($hero->getHealth() . "%"); ?></p>
+                <p><?= htmlspecialchars($hero->getHealth() . "%"); ?></p>
                 <img src="./assets/images/heros_unique_id/<?= htmlspecialchars($hero->getImage()); ?>" alt="Hero">
             </div>
 
-            <form method="POST">
-                <input type="submit" value="Attack" class="button">
-            </form>
-
-            <div class="button" id="button">Attack</div>
+            <?php if (!isset($_SESSION['gameOver'])): ?>
+                <form method="POST">
+                    <input type="submit" value="Attack" class="button">
+                </form>
+            <?php else: ?>
+                <div class="gameOver">
+                    <p>Game Over!</p>
+                    <form action="../process/handlePlayAgain.php" method="post">
+                        <input type="submit" value="Play Again">
+                    </form>
+                </div>
+            <?php endif; ?>
 
             <div>
-                <p id="monsterLabel"><?=  htmlspecialchars($monster->getHealth() . "%"); ?></p>
+                <p id="monsterLabel"><?= htmlspecialchars($monster->getHealth() . "%"); ?></p>
                 <img src="./assets/images/monster/<?= htmlspecialchars($monster->getImage()); ?>" alt="Monster">
             </div>
         </section>
     </main>
-
-<script>
-    let currentTurn = "hero"; // Initialize the turn to start with the hero
-    const attackButton = document.getElementById("button");
-    const monsterLabel = document.getElementById("monsterLabel");
-    const heroLabel = document.getElementById("heroLabel");
-
-    attackButton.addEventListener("click", handleAttack);
-
-    function handleAttack() {
-        if (currentTurn === "hero") {
-            // Hero attacks the monster
-            <?php $hero->attack($monster); ?>
-            monsterLabel.innerHTML = <?php echo json_encode($monster->getHealth() . '%'); ?>;
-
-            // Switch turn to monster
-            currentTurn = "monster";
-        } else {
-            // Monster attacks the hero
-            <?php $monster->attack($hero); ?>
-            heroLabel.innerHTML = <?php echo json_encode($hero->getHealth() . '%'); ?>;
-
-            // Switch turn back to hero
-            currentTurn = "hero";
-        }
-
-            console.log("Current Turn: " + currentTurn);
-            location.reload(); // Refresh the page to reflect updated health
-        }
-</script>
 </body>
 </html>
