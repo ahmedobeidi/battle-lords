@@ -2,7 +2,7 @@
 
 class HeroMapper 
 {
-    public static function mapToObject(array $datas)
+    public static function mapToObject(array $datas): Hero
     {
         return new Hero(
             $datas['id'],
@@ -13,7 +13,7 @@ class HeroMapper
         );
     }
 
-    public static function mapToArray(Hero $hero)
+    public static function mapToArray(Hero $hero): array
     {
         return [
             'name' => $hero->getName(),

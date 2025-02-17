@@ -1,7 +1,4 @@
 
-
-
-@media (min-width: 1280px) {
     main {
         display: flex;
         flex-direction: column;
@@ -53,4 +50,3 @@
         font-size: 1.5rem;
     }
 
- }

@@ -1,20 +1,20 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('../images/game/background.gif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    height: 100%;
+}
 
 @media (min-width: 1280px) {
-    * {
-        margin: 0;
-        padding: 0;
-    }
-    
-    body {
-        font-family: 'Arial', sans-serif;
-        margin: 0;
-        padding: 0;
-        background-image: url('../images/game/background.gif');
-        background-repeat: no-repeat;
-        background-size: cover;
-        color: #fff;
-        height: 100%;
-    }
     
     header {
         background-color: rgba(0, 0, 0, 0.5);
