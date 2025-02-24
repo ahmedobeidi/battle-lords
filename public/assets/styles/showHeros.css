@@ -1,52 +1,66 @@
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding-top: 80px; /* to account for the fixed header */
+}
 
-    main {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
+.heading {
+    padding-top: 150px;
+    font-size: 3rem;
+    text-align: center;
+}
+
+.hero-grid {
+    padding-top: 50px;
+    width: 90vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 100px;
+}
+
+.hero-card {
+    width: 400px;  /* fallback for larger screens */
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.hero-card:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+}
+
+.hero-name {
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero-card {
+        width: 90vw;   /* make hero cards take up most of the viewport width */
+        height: auto;  /* let the height adjust based on content */
+        margin-bottom: 20px;
     }
-    
-    .heading {
-        padding-top: 150px;
-        font-size: 3rem;
-    }
-    
+
     .hero-grid {
-        padding-top: 100px;
-        width: 90vw;
-        height: 50%;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: end;
-        flex-wrap: wrap;
-    }
-    
-     .hero-card {
-        width: 400;
-        height: 400px;
-        display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: end;
-        background-repeat: no-repeat;
-        background-size: cover;
-        border-radius: 10px;
-        transition: transform 0.3s, box-shadow 0.3s;
+        align-items: center;
     }
-    
-    .hero-card:hover {
-        transform: scale(1.05);
-        cursor: pointer;
-    }
-    
-    .hero-image {
-        width: 400;
-        height: 400px;
-    }
-    
-    .hero-name {
-        font-size: 1.5rem;
-    }
-
+}
