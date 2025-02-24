@@ -99,7 +99,6 @@ section form {
     section {
         flex-direction: column !important;
         align-items: center !important;
-        border: 2px dashed red !important;
     }
     
     /* Apply same width and margin to all children of the section */
