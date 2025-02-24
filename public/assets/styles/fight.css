@@ -97,8 +97,9 @@ section form {
 /* Responsive adjustments for mobile devices */
 @media (max-width: 768px) {
     section {
-        flex-direction: column;
-        align-items: center;
+        flex-direction: column !important;
+        align-items: center !important;
+        border: 2px dashed red !important;
     }
     
     /* Apply same width and margin to all children of the section */
